@@ -13,9 +13,12 @@ encodeElon = face_recognition.face_encodings(imgElon)[0]
 cv2.rectangle(imgElon,(faceLoc[3],faceLoc[0]),(faceLoc[1],faceLoc[2]),(255,0,255),2)
 
 faceLoc = face_recognition.face_locations(imgTest)[0]
-encodeElon = face_recognition.face_encodings(imgTest)[0]
+encodeTest = face_recognition.face_encodings(imgTest)[0]
 cv2.rectangle(imgTest,(faceLoc[3],faceLoc[0]),(faceLoc[1],faceLoc[2]),(255,0,255),2)
 
+results = face_recognition.compare_faces([encodeElon],encodeTest)
+faceDis = face_recognition.face_distance([encodeElon],encodeTest)
+print(results,faceDis)
 
 cv2.imshow('Elon Musk',imgElon)
 cv2.imshow('Elon Test',imgTest)
