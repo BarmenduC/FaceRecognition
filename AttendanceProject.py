@@ -14,8 +14,9 @@ for cl in myList:
     classNames.append(os.path.splitext(cl)[0])
 print(classNames)
 
+def findEncodings(images):
+    encodeList = []
+    for img in images:
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-#imgElon = face_recognition.load_image_file('ImageBasic/images.jpg')
-#imgElon = cv2.cvtColor(imgElon,cv2.COLOR_BGR2RGB)
-#imgTest = face_recognition.load_image_file('ImageBasic/images (2).jpg')
-#imgTest = cv2.cvtColor(imgTest,cv2.COLOR_BGR2RGB)
+
