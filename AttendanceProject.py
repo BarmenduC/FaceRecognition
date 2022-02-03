@@ -23,7 +23,14 @@ def findEncodings(images):
     return encodeList
 
 encodeListKnown = findEncodings(images)
-print(len(encodeListKnown))
+print('Encoding Complete')
+
+cap = cv2.VideoCapture(0)
+
+while true:
+    success, img = cap.read()
+    imgS = cv2.resize(img,(0,0),None,0.25,0.25)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 
 
