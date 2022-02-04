@@ -35,6 +35,11 @@ while true:
     facesCurFrame = face_recognition.face_locations(imgS)
     encodesCurFrame = face_recognition.face_encodings(imgS,facesCurFrame)
 
+    for encodeFace,faceLoc in zip(encodesCurFrame,facesCurFrame):
+      matches = face_recognition.compare_faces(encodeListKnown,encodeFace)
+      faceDis = face_recognition.face_distance(encodeListKnown,encodeFace)
+      print(faceDis)
+
 
 #faceLoc = face_recognition.face_locations(imgElon)[0]
 #encodeElon = face_recognition.face_encodings(imgElon)[0]
